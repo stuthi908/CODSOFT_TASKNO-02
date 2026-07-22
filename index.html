@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Master - To-Do App</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <header>
+            <h1>Task Master <i class="fa-solid fa-list-check"></i></h1>
+            <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </header>
+
+       
+        <form id="task-form">
+            <div class="input-group">
+                <input type="text" id="task-title" placeholder="What needs to be done?" required>
+                <button type="submit" class="btn-add"><i class="fa-solid fa-plus"></i> Add Task</button>
+            </div>
+            
+            <div class="options-group">
+                <select id="task-category">
+                    <option value="Personal">Personal</option>
+                    <option value="Work">Work</option>
+                    <option value="Study">Study</option>
+                </select>
+
+                <select id="task-priority">
+                    <option value="Low">Low Priority</option>
+                    <option value="Medium" selected>Medium Priority</option>
+                    <option value="High">High Priority</option>
+                </select>
+
+                <input type="date" id="task-date">
+            </div>
+        </form>
+
+        
+        <div class="controls-bar">
+            <div class="search-box">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" id="search-input" placeholder="Search tasks...">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="pending">Pending</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+        </div>
+
+        
+        <div class="metrics-bar">
+            <span>Pending: <strong id="pending-count">0</strong></span>
+            <span>Completed: <strong id="completed-count">0</strong></span>
+        </div>
+
+       
+        <ul id="task-list" class="task-list"></ul>
+    </div>
+
+    
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <h3>Edit Task</h3>
+            <input type="text" id="edit-title">
+            <div class="modal-actions">
+                <button id="save-edit-btn" class="btn-save">Save</button>
+                <button id="cancel-edit-btn" class="btn-cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
